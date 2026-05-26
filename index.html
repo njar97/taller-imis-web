@@ -3,175 +3,267 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>UDP Confecciones IMIS — Taller de Confección y Bordados | Sonsonate, El Salvador</title>
-  <meta name="description" content="Taller textil en Sonsonate. Confección de uniformes, bordados computarizados y tejido de cuellos para escuelas, empresas e instituciones. Más de 20 años de experiencia." />
-  <meta name="theme-color" content="#2C1654" />
+  <title>IMELTEX — Bazar y Confección en Sonsonate, El Salvador</title>
+  <meta name="description" content="Taller textil en Sonsonate desde 2011. Confección de uniformes, bordados computarizados, cuellos tejidos y atención a licitaciones COMPRASAL. Cotizá por WhatsApp." />
+  <meta name="theme-color" content="#1B2845" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="UDP Confecciones IMIS — Taller de Confección y Bordados" />
-  <meta property="og:description" content="Uniformes, bordados y tejidos. Sonsonate, El Salvador. Cotizá por WhatsApp." />
+  <meta property="og:title" content="IMELTEX — Bazar y Confección" />
+  <meta property="og:description" content="Confección, bordado y cuellos. Sonsonate, El Salvador. Desde 2011." />
   <meta property="og:locale" content="es_SV" />
+  <meta property="og:image" content="imeltex-logo.png" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B5%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="imeltex-logo.png" />
+  <link rel="apple-touch-icon" href="imeltex-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --morado-oscuro: #1a0a35;
-      --morado: #2C1654;
-      --violeta: #9B59B6;
-      --verde: #27AE60;
+      --navy: #1B2845;
+      --navy-dark: #0F1A30;
+      --gold: #C2A75E;
+      --gold-light: #D9C28A;
+      --cream: #F8F4ED;
+      --cream-dark: #EDE6D6;
+      --texto: #1F2937;
+      --gris: #5B6470;
+      --gris-claro: #9AA1AE;
+      --linea: #E5E0D2;
       --verde-wa: #25D366;
-      --naranja: #E67E22;
-      --bg: #FAFAFA;
-      --texto: #2C1654;
-      --gris: #666;
-      --gris-claro: #aaa;
     }
     html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
     body {
       font-family: 'Inter', -apple-system, system-ui, sans-serif;
       color: var(--texto);
-      background: var(--bg);
+      background: var(--cream);
       line-height: 1.6;
       font-size: 16px;
       overflow-x: hidden;
     }
-    h1, h2, h3 { font-family: Georgia, serif; line-height: 1.2; color: var(--morado); }
-    h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 0.5em; }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15; color: var(--navy); letter-spacing: -0.5px; }
+    h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin-bottom: 0.4em; }
+    h3 { font-weight: 700; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; height: auto; display: block; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
     /* ── Nav ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
-      padding: 12px 0;
+      background: rgba(248,244,237,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--linea);
+      padding: 10px 0;
     }
     nav .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    nav .logo { font-family: Georgia, serif; font-weight: 800; font-size: 18px; }
-    nav .logo span.emoji { font-size: 22px; margin-right: 6px; }
-    nav ul { display: flex; gap: 20px; list-style: none; }
-    nav ul a { font-size: 14px; font-weight: 600; color: var(--gris); transition: color .2s; }
-    nav ul a:hover { color: var(--violeta); }
-    @media (max-width: 700px) { nav ul { display: none; } }
+    nav .logo-link { display: flex; align-items: center; gap: 10px; }
+    nav .logo-link img { height: 40px; width: auto; }
+    nav .logo-link .marca {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900; font-size: 19px; color: var(--navy); letter-spacing: 1px;
+    }
+    nav ul { display: flex; gap: 26px; list-style: none; }
+    nav ul a {
+      font-size: 13px; font-weight: 600; color: var(--gris);
+      transition: color .2s; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    nav ul a:hover { color: var(--navy); }
+    @media (max-width: 760px) {
+      nav ul { display: none; }
+      nav .logo-link .marca { font-size: 16px; }
+      nav .logo-link img { height: 34px; }
+    }
 
     /* ── Hero ── */
     .hero {
-      background: linear-gradient(135deg, var(--morado-oscuro), var(--morado), #3d2070);
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #2A3760 100%);
       color: #fff;
-      padding: 80px 0 100px;
+      padding: 100px 0 130px;
       position: relative;
       overflow: hidden;
     }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(194,167,94,0.12) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(194,167,94,0.08) 0%, transparent 40%);
+    }
     .hero::after {
       content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
-      height: 60px; background: var(--bg);
+      height: 70px; background: var(--cream);
       clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 0);
     }
     .hero .container { position: relative; z-index: 1; text-align: center; }
-    .hero .emoji-grande { font-size: clamp(60px, 12vw, 100px); margin-bottom: 16px; }
-    .hero h1 {
-      color: #fff; font-size: clamp(2rem, 6vw, 3.5rem);
-      margin-bottom: 16px; letter-spacing: -0.5px;
+    .hero .logo-hero { max-width: 320px; margin: 0 auto 28px; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.25)); }
+    .hero .desde {
+      display: inline-block; font-size: 11px; letter-spacing: 4px;
+      color: var(--gold-light); text-transform: uppercase; margin-bottom: 14px;
+      padding: 4px 14px; border: 1px solid rgba(194,167,94,0.4); border-radius: 100px;
     }
-    .hero .subtitulo { font-size: clamp(1rem, 2.5vw, 1.25rem); color: #d9c9f0; max-width: 600px; margin: 0 auto 32px; }
+    .hero h1 {
+      color: #fff; font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+      margin-bottom: 18px;
+    }
+    .hero h1 strong { color: var(--gold); font-weight: 900; }
+    .hero .subtitulo {
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem); color: #c8d0e0;
+      max-width: 640px; margin: 0 auto 36px; line-height: 1.5;
+    }
     .hero .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 28px; border-radius: 100px; font-weight: 800;
-      font-size: 15px; transition: transform .15s, box-shadow .15s;
+      padding: 14px 28px; border-radius: 4px; font-weight: 700;
+      font-size: 14px; transition: transform .15s, box-shadow .15s, background .2s;
       cursor: pointer; border: none; font-family: inherit;
+      letter-spacing: 0.5px; text-transform: uppercase;
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
     .btn-wa { background: var(--verde-wa); color: #fff; }
-    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
-    .hero .meta { margin-top: 28px; color: #b09cd0; font-size: 13px; }
-    .hero .meta strong { color: #fff; }
+    .btn-wa:hover { background: #1eb454; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+    .btn-gold {
+      background: var(--gold); color: var(--navy-dark);
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--gold); }
 
     /* ── Secciones ── */
-    section { padding: 70px 0; }
-    section.alt { background: #fff; }
-    .seccion-titulo { text-align: center; margin-bottom: 40px; }
+    section { padding: 80px 0; }
+    section.dark { background: var(--navy); color: #fff; }
+    section.dark h2, section.dark h3 { color: #fff; }
+    section.cream-dark { background: var(--cream-dark); }
+    .seccion-titulo { text-align: center; margin-bottom: 50px; }
     .seccion-titulo .label {
-      display: inline-block; font-size: 12px; font-weight: 800;
-      color: var(--violeta); letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 8px;
+      display: inline-block; font-size: 11px; font-weight: 700;
+      color: var(--gold); letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 12px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold);
     }
+    .seccion-titulo .sub { font-size: 14px; color: var(--gris); max-width: 500px; margin: 8px auto 0; }
+    section.dark .seccion-titulo .sub { color: #b0b9c8; }
 
     /* ── Servicios ── */
-    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
     .servicio {
-      background: #fff; border: 1.5px solid #eee; border-radius: 16px;
-      padding: 28px 24px; transition: transform .2s, border-color .2s, box-shadow .2s;
+      background: #fff; border: 1px solid var(--linea); border-radius: 4px;
+      padding: 32px 26px; transition: transform .2s, border-color .2s, box-shadow .2s;
+      position: relative;
     }
-    .servicio:hover { transform: translateY(-4px); border-color: var(--violeta); box-shadow: 0 12px 28px rgba(155,89,182,0.15); }
-    .servicio .icon { font-size: 44px; margin-bottom: 12px; }
+    .servicio::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--gold); transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .servicio:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 16px 36px rgba(27,40,69,0.10); }
+    .servicio:hover::before { transform: scaleX(1); }
+    .servicio .icon {
+      font-size: 32px; margin-bottom: 14px;
+      width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+      background: var(--cream-dark); border-radius: 4px; color: var(--navy);
+    }
     .servicio h3 { font-size: 20px; margin-bottom: 6px; }
-    .servicio p { color: var(--gris); font-size: 14px; }
-    .servicio ul { list-style: none; margin-top: 10px; }
-    .servicio ul li { font-size: 13px; color: var(--gris); padding-left: 18px; position: relative; margin-top: 4px; }
-    .servicio ul li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 800; }
+    .servicio p { color: var(--gris); font-size: 14px; margin-bottom: 10px; }
+    .servicio ul { list-style: none; }
+    .servicio ul li { font-size: 13px; color: var(--gris); padding-left: 16px; position: relative; margin-top: 5px; }
+    .servicio ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 800; }
+
+    /* ── Stats / Trayectoria ── */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px; margin-top: 40px;
+    }
+    .stat { text-align: center; }
+    .stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.5rem); font-weight: 900; color: var(--gold);
+      line-height: 1; margin-bottom: 6px;
+    }
+    .stat .label { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #b0b9c8; }
 
     /* ── Galería ── */
     .galeria-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px; margin-top: 30px;
+      gap: 14px;
     }
     .galeria-item {
-      aspect-ratio: 1; background: linear-gradient(135deg, #f8f4ff, #ece1f5);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-size: 42px; color: var(--violeta); border: 2px dashed #d4c0e8;
+      aspect-ratio: 1; background: #fff; border: 1px solid var(--linea);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      font-size: 36px; color: var(--navy); position: relative;
       transition: transform .2s;
     }
-    .galeria-item:hover { transform: scale(1.03); }
+    .galeria-item::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(27,40,69,0.04) 100%);
+      border-radius: 4px;
+    }
+    .galeria-item:hover { transform: scale(1.03); border-color: var(--gold); }
     .galeria-placeholder-msg {
-      grid-column: 1 / -1; text-align: center; padding: 16px; color: var(--gris-claro);
+      grid-column: 1 / -1; text-align: center; padding: 14px; color: var(--gris-claro);
       font-size: 13px; font-style: italic;
     }
 
+    /* ── Mapa ── */
+    .mapa-wrap {
+      border-radius: 4px; overflow: hidden; border: 1px solid var(--linea);
+      box-shadow: 0 8px 24px rgba(27,40,69,0.08);
+    }
+    .mapa-wrap iframe { display: block; width: 100%; height: 360px; border: 0; }
+
     /* ── Contacto ── */
     .contacto-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px; margin-top: 30px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;
     }
+    @media (max-width: 800px) { .contacto-grid { grid-template-columns: 1fr; } }
+    .contacto-info { display: flex; flex-direction: column; gap: 18px; }
     .contacto-card {
-      background: #fff; border-radius: 14px; padding: 24px;
-      border: 1.5px solid #eee;
+      background: #fff; border: 1px solid var(--linea); border-radius: 4px;
+      padding: 20px 22px; transition: border-color .2s;
     }
-    .contacto-card h3 { font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-    .contacto-card p, .contacto-card a { color: var(--gris); font-size: 14px; margin-bottom: 6px; display: block; }
-    .contacto-card a:hover { color: var(--violeta); }
-    .contacto-card .destacado {
-      background: var(--verde-wa); color: #fff; padding: 12px 16px; border-radius: 100px;
-      font-weight: 800; text-align: center; margin-top: 8px;
-      transition: transform .15s;
+    .contacto-card:hover { border-color: var(--gold); }
+    .contacto-card .titulo { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .contacto-card .valor { font-size: 16px; color: var(--navy); font-weight: 600; margin-bottom: 4px; }
+    .contacto-card .extra { font-size: 13px; color: var(--gris); }
+    .contacto-card a { display: block; color: inherit; }
+    .contacto-card a:hover .valor { color: var(--gold); }
+
+    .contacto-cta {
+      background: var(--navy); color: #fff; padding: 14px 22px; border-radius: 4px;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 700; font-size: 13px; letter-spacing: 0.5px;
+      transition: background .2s, transform .15s;
+      margin-top: 12px; text-transform: uppercase;
     }
-    .contacto-card .destacado:hover { transform: scale(1.03); }
+    .contacto-cta:hover { background: var(--gold); color: var(--navy-dark); transform: translateY(-2px); }
 
     /* ── Footer ── */
     footer {
-      background: var(--morado); color: #b09cd0; padding: 40px 0 24px;
-      font-size: 13px; text-align: center;
+      background: var(--navy-dark); color: #b0b9c8; padding: 50px 0 26px;
+      font-size: 13px;
     }
-    footer .empresa-info { color: #fff; font-weight: 700; margin-bottom: 6px; font-family: Georgia, serif; font-size: 16px; }
-    footer .fiscal { font-size: 11px; color: #7a5a9b; margin-top: 8px; }
-    footer .copy { margin-top: 20px; padding-top: 20px; border-top: 1px solid #3d2070; }
+    footer .footer-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;
+    }
+    @media (max-width: 700px) { footer .footer-grid { grid-template-columns: 1fr; text-align: center; } }
+    footer .marca-fiscal { color: #fff; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 17px; margin-bottom: 8px; }
+    footer .fiscal { font-size: 12px; line-height: 1.7; }
+    footer .fiscal strong { color: #d6c285; }
+    footer .copy {
+      margin-top: 36px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 11px; color: #6b7794; text-align: center;
+    }
 
     /* ── Float WA Button ── */
     .wa-float {
-      position: fixed; bottom: 20px; right: 20px; z-index: 200;
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
       width: 56px; height: 56px; border-radius: 50%;
       background: var(--verde-wa); color: #fff;
       display: flex; align-items: center; justify-content: center;
-      font-size: 28px; box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+      font-size: 26px; box-shadow: 0 10px 30px rgba(37,211,102,0.45);
       transition: transform .2s;
     }
     .wa-float:hover { transform: scale(1.1); }
@@ -182,12 +274,13 @@
   <!-- ── Nav ── -->
   <nav>
     <div class="container">
-      <a href="#" class="logo">
-        <span class="emoji">🧵</span>UDP Confecciones IMIS
+      <a href="#" class="logo-link">
+        <img src="imeltex-logo.png" alt="IMELTEX" />
       </a>
       <ul>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#galeria">Trabajos</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
@@ -196,20 +289,18 @@
   <!-- ── Hero ── -->
   <header class="hero">
     <div class="container">
-      <div class="emoji-grande">🧵</div>
-      <h1>Confección y bordado a la medida</h1>
+      <img class="logo-hero" src="imeltex-logo.png" alt="IMELTEX — Bazar y Confección" />
+      <div class="desde">Desde 2011 · Sonsonate</div>
+      <h1>Confección, bordado y tejido <br><strong>hecho con oficio</strong></h1>
       <p class="subtitulo">
-        Uniformes escolares, ropa institucional, bordados computarizados y cuellos tejidos.
-        Taller textil en Sonsonate con más de 20 años trabajando para escuelas, empresas e instituciones de El Salvador.
+        Taller textil sonsonatense con más de una década vistiendo a escuelas, empresas e instituciones de El Salvador.
+        Calidad, plazo y atención formal para licitaciones COMPRASAL.
       </p>
       <div class="cta-row">
-        <a class="btn btn-wa" href="https://wa.me/50378669963?text=Hola%20IMIS%2C%20quiero%20cotizar%20un%20pedido" target="_blank" rel="noopener">
-          <span style="font-size:20px">📱</span> Cotizar por WhatsApp
+        <a class="btn btn-wa" href="https://wa.me/50378669963?text=Hola%20IMELTEX%2C%20quiero%20cotizar%20un%20pedido" target="_blank" rel="noopener">
+          <span style="font-size:18px">📱</span> Cotizar por WhatsApp
         </a>
         <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
-      </div>
-      <div class="meta">
-        <strong>📍 Sonsonate, El Salvador</strong> · 2451-1620 · 7866-9963
       </div>
     </div>
   </header>
@@ -220,65 +311,96 @@
       <div class="seccion-titulo">
         <div class="label">Qué hacemos</div>
         <h2>Nuestros servicios</h2>
+        <div class="sub">Lo que producimos en el taller, todo bajo el mismo techo.</div>
       </div>
       <div class="servicios-grid">
         <div class="servicio">
           <div class="icon">✂️</div>
           <h3>Confección</h3>
-          <p>Prendas a medida y por lote.</p>
+          <p>Prendas a medida y por lote, con corte y costura industrial.</p>
           <ul>
             <li>Uniformes escolares</li>
             <li>Camisas y blusas institucionales</li>
-            <li>Ropa de trabajo</li>
+            <li>Ropa de trabajo y operarios</li>
             <li>Banderas y mantones ceremoniales</li>
           </ul>
         </div>
         <div class="servicio">
           <div class="icon">🪡</div>
           <h3>Bordado computarizado</h3>
-          <p>Logos, escudos y diseños personalizados.</p>
+          <p>Logos, escudos y diseños personalizados con máquina multi-aguja.</p>
           <ul>
             <li>Escudos escolares</li>
             <li>Logos empresariales</li>
-            <li>Diseños múltiple aguja</li>
-            <li>Soportes: camisas, suéteres, polos, gorras</li>
+            <li>Diseños sobre camisas, suéteres, polos, gorras</li>
+            <li>Archivos Wilcom (.emb / .dst / .pes)</li>
           </ul>
         </div>
         <div class="servicio">
           <div class="icon">🧶</div>
-          <h3>Cuellos tejidos</h3>
-          <p>Tejido de cuellos y puños para uniformes.</p>
+          <h3>Cuellos y tejido</h3>
+          <p>Cuellos, puños y vivos tejidos para uniformes.</p>
           <ul>
             <li>Cuellos para polo</li>
-            <li>Puños y vivos</li>
+            <li>Puños y vivos a medida</li>
             <li>Variedad de colores e hilos</li>
             <li>Lotes para colegios y fábricas</li>
           </ul>
         </div>
         <div class="servicio">
           <div class="icon">🏛️</div>
-          <h3>Licitaciones</h3>
-          <p>Atendemos COMPRASAL y procesos formales.</p>
+          <h3>Licitaciones formales</h3>
+          <p>Atendemos COMPRASAL y procesos de gobierno con la documentación correcta.</p>
           <ul>
-            <li>Cotizaciones formales con documentación</li>
+            <li>Cotizaciones formales con respaldo legal</li>
             <li>Declaración de capacidad instalada</li>
-            <li>Facturación con CCF para Gobierno</li>
-            <li>Plazos y entregas comprometidas</li>
+            <li>Facturación con CCF (Crédito Fiscal)</li>
+            <li>Plazos comprometidos y entrega cumplida</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── Trayectoria (dark section) ── -->
+  <section class="dark">
+    <div class="container">
+      <div class="seccion-titulo">
+        <div class="label">Por qué IMELTEX</div>
+        <h2>Trayectoria que respalda</h2>
+        <div class="sub">Más de una década perfeccionando cada puntada.</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="num">+10</div>
+          <div class="label">Años en Sonsonate</div>
+        </div>
+        <div class="stat">
+          <div class="num">+50</div>
+          <div class="label">Instituciones atendidas</div>
+        </div>
+        <div class="stat">
+          <div class="num">4</div>
+          <div class="label">Líneas de producción</div>
+        </div>
+        <div class="stat">
+          <div class="num">100%</div>
+          <div class="label">Hecho en El Salvador</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Galería ── -->
-  <section id="galeria" class="alt">
+  <section id="galeria" class="cream-dark">
     <div class="container">
       <div class="seccion-titulo">
         <div class="label">Portafolio</div>
         <h2>Trabajos realizados</h2>
+        <div class="sub">Una muestra de lo que sale del taller.</div>
       </div>
       <div class="galeria-grid">
-        <!-- Cuando tengas fotos, reemplazá los placeholders por <img src="..." alt="..."> -->
+        <!-- Cuando tengas fotos, reemplazá los placeholders por <img src="fotos/X.jpg" alt="..." class="galeria-item"> -->
         <div class="galeria-item">🎓</div>
         <div class="galeria-item">👕</div>
         <div class="galeria-item">🪡</div>
@@ -286,43 +408,70 @@
         <div class="galeria-item">🎽</div>
         <div class="galeria-item">🧵</div>
         <div class="galeria-placeholder-msg">
-          Galería en construcción — pronto subimos fotos de uniformes, bordados y banderas hechos por el taller.
+          Galería en construcción — próximamente subimos fotos reales de uniformes, bordados y banderas hechos en el taller.
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── Ubicación ── -->
+  <section id="ubicacion">
+    <div class="container">
+      <div class="seccion-titulo">
+        <div class="label">Dónde estamos</div>
+        <h2>Visitanos en Sonsonate</h2>
+        <div class="sub">Lunes a Sábado · 8:00 AM – 5:00 PM</div>
+      </div>
+      <div class="mapa-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=ImelTex+Bazar+y+Confecci%C3%B3n+Sonsonate&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de IMELTEX en Sonsonate"
+        ></iframe>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <a class="contacto-cta" href="https://maps.app.goo.gl/zHChLPt75H6Lh97o6" target="_blank" rel="noopener">
+          📍 Abrir en Google Maps →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Contacto ── -->
-  <section id="contacto">
+  <section id="contacto" class="cream-dark">
     <div class="container">
       <div class="seccion-titulo">
         <div class="label">Cotizá</div>
         <h2>Hablemos de tu pedido</h2>
+        <div class="sub">Mandanos referencia, cantidad y fecha. Respondemos rápido por WhatsApp.</div>
       </div>
       <div class="contacto-grid">
-        <div class="contacto-card">
-          <h3>📱 WhatsApp</h3>
-          <p>La forma más rápida de cotizar. Mandanos tu idea, foto de referencia, cantidad y fecha de entrega.</p>
-          <a class="destacado" href="https://wa.me/50378669963?text=Hola%20IMIS%2C%20quiero%20cotizar%20un%20pedido" target="_blank" rel="noopener">
-            Abrir WhatsApp →
+        <div>
+          <div style="background: var(--navy); color: #fff; padding: 36px 28px; border-radius: 4px; text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin-bottom: 8px;">¿Lo más rápido?</div>
+            <div style="font-size: 14px; color: #b0b9c8; margin-bottom: 24px;">Una sola conversación por WhatsApp y vemos qué necesitás.</div>
+            <a class="btn btn-wa" href="https://wa.me/50378669963?text=Hola%20IMELTEX%2C%20quiero%20cotizar%20un%20pedido" target="_blank" rel="noopener" style="font-size: 14px;">
+              <span style="font-size: 18px;">📱</span> Abrir WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="contacto-info">
+          <a class="contacto-card" href="tel:+50324511620">
+            <div class="titulo">Taller</div>
+            <div class="valor">2451-1620</div>
+            <div class="extra">Llamadas en horario laboral</div>
           </a>
-        </div>
-        <div class="contacto-card">
-          <h3>📞 Teléfono</h3>
-          <p>Llamanos en horario de taller (Lun-Sáb 8am - 5pm).</p>
-          <a href="tel:+50324511620">2451-1620 (taller)</a>
-          <a href="tel:+50378669963">7866-9963 (celular)</a>
-          <a href="tel:+50379570695">7957-0695 (alterno)</a>
-        </div>
-        <div class="contacto-card">
-          <h3>✉️ Email</h3>
-          <p>Para documentación, licitaciones o pedidos formales.</p>
-          <a href="mailto:confecciones_imis@hotmail.com">confecciones_imis@hotmail.com</a>
-        </div>
-        <div class="contacto-card">
-          <h3>📍 Ubicación</h3>
-          <p>Sonsonate, Col. Santa Marta, Av. Centroamericana, Casa N.° 5-A</p>
-          <a href="https://maps.google.com/?q=Sonsonate+Col+Santa+Marta+Av+Centroamericana" target="_blank" rel="noopener">Abrir en Google Maps →</a>
+          <a class="contacto-card" href="tel:+50378669963">
+            <div class="titulo">Celular / WhatsApp</div>
+            <div class="valor">7866-9963</div>
+            <div class="extra">Mensajes en cualquier momento</div>
+          </a>
+          <a class="contacto-card" href="mailto:confecciones_imis@hotmail.com">
+            <div class="titulo">Email</div>
+            <div class="valor">confecciones_imis@hotmail.com</div>
+            <div class="extra">Para licitaciones y documentación formal</div>
+          </a>
         </div>
       </div>
     </div>
@@ -331,19 +480,27 @@
   <!-- ── Footer ── -->
   <footer>
     <div class="container">
-      <div class="empresa-info">🧵 UDP Confecciones IMIS</div>
-      <div>Confección · Bordado · Cuellos · Más de 20 años en Sonsonate</div>
-      <div class="fiscal">
-        NIT 0315-101011-101-2 · NRC 211590-0 · Fabricación de productos textiles
+      <div class="footer-grid">
+        <div>
+          <div class="marca-fiscal">IMELTEX</div>
+          <div style="color: #b0b9c8; font-size: 13px; margin-bottom: 6px;">Bazar y Confección</div>
+          <div style="font-size: 12px; color: #6b7794;">Sonsonate, El Salvador · Desde 2011</div>
+        </div>
+        <div class="fiscal">
+          <div style="color: #fff; font-weight: 700; margin-bottom: 6px;">Razón social fiscal</div>
+          <div><strong>UDP Confecciones IMIS</strong></div>
+          <div>NIT 0315-101011-101-2 · NRC 211590-0</div>
+          <div>Fabricación de productos textiles</div>
+        </div>
       </div>
       <div class="copy">
-        © <span id="anio"></span> UDP Confecciones IMIS. Todos los derechos reservados.
+        © <span id="anio"></span> IMELTEX · UDP Confecciones IMIS. Todos los derechos reservados.
       </div>
     </div>
   </footer>
 
   <!-- ── Float WhatsApp ── -->
-  <a class="wa-float" href="https://wa.me/50378669963?text=Hola%20IMIS%2C%20quiero%20cotizar%20un%20pedido" target="_blank" rel="noopener" title="Contactanos por WhatsApp">
+  <a class="wa-float" href="https://wa.me/50378669963?text=Hola%20IMELTEX%2C%20quiero%20cotizar%20un%20pedido" target="_blank" rel="noopener" title="Contactanos por WhatsApp" aria-label="WhatsApp">
     📱
   </a>
 
