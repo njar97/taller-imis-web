@@ -141,6 +141,11 @@ section.dark .seccion-titulo .sub { color: #b0b9c8; }
 .servicio ul { list-style: none; }
 .servicio ul li { font-size: 13px; color: var(--gris); padding-left: 16px; position: relative; margin-top: 5px; }
 .servicio ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 800; }
+.servicio-link { display: block; }
+.servicio-link .ver-mas {
+  margin-top: 14px; font-size: 12px; color: var(--gold);
+  font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+}
 
 /* ── Stats / Trayectoria ── */
 .stats-row {
