@@ -1,0 +1,10 @@
+﻿{
+    "app_id":  "1035442325718327",
+    "long_user_expires_at":  "2026-07-25T15:38:47.5436664-06:00",
+    "ig_business_id":  null,
+    "page_id":  "1066639549873838",
+    "page_name":  "Imeltex",
+    "long_user_token":  "EAAOturQChTcBRpXoxK59RyiXxJPfYk0UVRncFzLlae57HIOc8ldmP3SgA1dm5uyYgpauexHVF4bO4ZBb2jcshoxG7J1O0lwfwmzBCIpJRXTrhVCPaPTXWS5TK4zcdytALc1Q3tpFTTAmE16pR0IakBZCrDmAjsGCeDZA1n6ZAO4b4VQzMSoCBA13yNd8PbGJ",
+    "generated_at":  "2026-05-26T17:17:17.5576864-06:00",
+    "page_token":  "EAAOturQChTcBRmUpGaXZCbcepM2JNNpMIaIuZC8v5HSaHBTiJO6RsENh2eUAq3B7FLmsRauciW63VODH3yzMYazopNRCGc3I0GgKYn8MJzfMZAw3aw6q7QFOhBDbEtuYqxc2AxJ7Tcyr1CkyjpPJNFb80NOCBdsjDwaU4xrgZB4yCJg9HbABhtBYZBvvZCOg7FuaC7pDJa"
+}
