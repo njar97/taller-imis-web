@@ -3,3 +3,7 @@ Thumbs.db
 *.log
 .vscode/
 node_modules/
+
+# Tokens / secretos locales — nunca versionar
+.fb-token-temp.txt
+*.token
