@@ -306,3 +306,119 @@ footer .copy {
 }
 .cta-bloque h2 { color: #fff; margin-bottom: 14px; }
 .cta-bloque p { color: #c8d0e0; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+/* ════════════════════════════════════════════
+   Scroll-reveal (capa de movimiento)
+   ════════════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .7s cubic-bezier(.16,.84,.44,1),
+                transform .7s cubic-bezier(.16,.84,.44,1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-d1 { transition-delay: .08s; }
+  .reveal-d2 { transition-delay: .16s; }
+  .reveal-d3 { transition-delay: .24s; }
+  .reveal-d4 { transition-delay: .32s; }
+}
+
+/* ════════════════════════════════════════════
+   Catálogo inteligente
+   ════════════════════════════════════════════ */
+/* Barra de filtros */
+.cat-filtros {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  margin-bottom: 34px;
+}
+.cat-filtro {
+  font-size: 12.5px; font-weight: 700; letter-spacing: .5px;
+  padding: 9px 18px; border-radius: 100px; cursor: pointer;
+  background: #fff; color: var(--gris); border: 1px solid var(--linea);
+  transition: all .18s; font-family: inherit;
+}
+.cat-filtro:hover { border-color: var(--gold); color: var(--navy); }
+.cat-filtro.activo {
+  background: var(--navy); color: #fff; border-color: var(--navy);
+}
+
+/* La card oculta por filtro */
+.cat-card.oculto { display: none; }
+
+/* Card destacada (producto con precio) ocupa 2 columnas en desktop */
+.cat-grid .cat-card.featured { grid-column: span 2; }
+@media (max-width: 720px) {
+  .cat-grid .cat-card.featured { grid-column: span 1; }
+}
+.cat-card.featured { flex-direction: row; }
+.cat-card.featured .foto { width: 44%; aspect-ratio: auto; flex-shrink: 0; }
+.cat-card.featured .info-wrap { display: flex; flex-direction: column; flex: 1; }
+@media (max-width: 560px) {
+  .cat-card.featured { flex-direction: column; }
+  .cat-card.featured .foto { width: 100%; aspect-ratio: 4/3; }
+}
+
+/* Cinta "Más vendido" */
+.cat-card .ribbon {
+  position: absolute; top: 14px; left: 0;
+  background: var(--gold); color: var(--navy-dark);
+  font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 5px 14px 5px 12px; border-radius: 0 4px 4px 0;
+  box-shadow: 0 4px 10px rgba(27,40,69,.18); z-index: 2;
+}
+.cat-card { position: relative; }
+
+/* Badge de precio (esquina de la foto) */
+.cat-card .precio-badge {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  background: rgba(255,255,255,.94); backdrop-filter: blur(4px);
+  border: 1px solid var(--linea); border-radius: 100px;
+  padding: 6px 13px; font-size: 12px; font-weight: 800; color: var(--navy);
+  box-shadow: 0 3px 10px rgba(27,40,69,.12);
+}
+.cat-card .precio-badge.cotizar { color: var(--gold); }
+
+/* ── Mini-estimador ── */
+.estimador {
+  background: var(--cream); border: 1px solid var(--linea);
+  border-radius: 6px; padding: 16px 18px; margin: 0 0 4px;
+}
+.estimador .est-titulo {
+  font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+}
+.est-controles { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.est-stepper {
+  display: flex; align-items: center; border: 1px solid var(--linea);
+  border-radius: 6px; overflow: hidden; background: #fff;
+}
+.est-stepper button {
+  width: 38px; height: 40px; border: none; background: #fff; cursor: pointer;
+  font-size: 20px; color: var(--navy); font-weight: 700; line-height: 1;
+  transition: background .15s;
+}
+.est-stepper button:hover { background: var(--cream-dark); }
+.est-stepper input {
+  width: 54px; height: 40px; border: none; text-align: center;
+  font-size: 16px; font-weight: 700; color: var(--navy); font-family: inherit;
+  -moz-appearance: textfield;
+}
+.est-stepper input::-webkit-outer-spin-button,
+.est-stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.est-controles .est-unidades { font-size: 13px; color: var(--gris); }
+.est-resultado {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding-top: 12px; border-top: 1px solid var(--linea);
+}
+.est-resultado .est-desglose { font-size: 12.5px; color: var(--gris); }
+.est-resultado .est-total {
+  font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: var(--navy);
+}
+.est-tier {
+  display: inline-block; font-size: 11px; font-weight: 700; margin-top: 6px;
+  padding: 2px 9px; border-radius: 100px;
+}
+.est-tier.docena { background: #f0fff5; color: #149a4b; border: 1px solid #9be9b8; }
+.est-tier.suelto { background: var(--cream-dark); color: var(--gris); border: 1px solid var(--linea); }

@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
   <style>
     /* ── Catálogo ── */
     .catalogo-hero {
@@ -184,63 +185,88 @@
   <section class="cat-section">
     <div class="container">
 
-      <div class="descuento-aviso">
+      <div class="descuento-aviso reveal">
         <div class="icono">🏷️</div>
         <div>
           El precio por <strong>docena</strong> es el mejor precio. Pedidos menores de 12 unidades tienen un precio diferente — indicado en cada producto.
         </div>
       </div>
 
+      <!-- ── Filtros ── -->
+      <div class="cat-filtros reveal">
+        <button class="cat-filtro activo" data-filter="todo">Todo</button>
+        <button class="cat-filtro" data-filter="confeccion">Confección</button>
+        <button class="cat-filtro" data-filter="uniformes">Uniformes</button>
+        <button class="cat-filtro" data-filter="bordado">Bordado</button>
+      </div>
+
       <div class="cat-grid">
 
-        <!-- ── Camisa piqué ── -->
-        <div class="cat-card">
-          <div class="foto"><img src="https://kszdievqesveluzcnzsh.supabase.co/storage/v1/object/public/taller-imis-fotos/catalogo/camisa-pique-blanca.png" alt="Camisa piqué blanca con cuello" /></div>
-          <div class="cuerpo">
-            <div class="categoria">Confección + bordado</div>
-            <h3>Camisa piqué con bordado</h3>
-            <div class="badge-disponible">Disponible</div>
-            <p class="desc">
-              Camisa polo de tela piqué con cuello y puños tejidos. Incluye bordado computarizado de logo o diseño en el pecho izquierdo. Ideal para uniformes institucionales y empresariales.
-            </p>
-            <div class="detalles">
-              <span class="chip">Piqué algodón</span>
-              <span class="chip">Cuello tejido</span>
-              <span class="chip">Bordado incluido</span>
-              <span class="chip">Varios colores</span>
-            </div>
+        <!-- ── Camisa piqué (destacada + estimador) ── -->
+        <div class="cat-card featured reveal" data-cat="confeccion">
+          <div class="foto">
+            <span class="ribbon">★ Destacado</span>
+            <span class="precio-badge">Desde $14/u</span>
+            <img src="https://kszdievqesveluzcnzsh.supabase.co/storage/v1/object/public/taller-imis-fotos/catalogo/camisa-pique-blanca.png" alt="Camisa piqué blanca con cuello" />
           </div>
-          <div class="precios-bloque">
-            <div class="precio-row">
-              <span class="precio-label">Docena (12 unidades)</span>
-              <span class="precio-val">$14.00<span class="unit">/u · $168 total</span></span>
+          <div class="info-wrap">
+            <div class="cuerpo">
+              <div class="categoria">Confección + bordado</div>
+              <h3>Camisa piqué con bordado</h3>
+              <div class="badge-disponible">Disponible</div>
+              <p class="desc">
+                Camisa polo de tela piqué con cuello y puños tejidos. Incluye bordado computarizado de logo o diseño en el pecho izquierdo. Ideal para uniformes institucionales y empresariales.
+              </p>
+              <div class="detalles">
+                <span class="chip">Piqué algodón</span>
+                <span class="chip">Cuello tejido</span>
+                <span class="chip">Bordado incluido</span>
+                <span class="chip">Varios colores</span>
+              </div>
             </div>
-            <div class="precio-row">
-              <span class="precio-label">Menos de docena</span>
-              <span class="precio-val">$16.00<span class="unit">/unidad</span></span>
+            <div class="cta-zona">
+              <div class="estimador">
+                <div class="est-titulo">🧮 Calculá tu pedido</div>
+                <div class="est-controles">
+                  <div class="est-stepper">
+                    <button type="button" data-step="-1" aria-label="Quitar una pieza">−</button>
+                    <input type="number" id="pq-cant" value="12" min="1" inputmode="numeric" aria-label="Cantidad de piezas" />
+                    <button type="button" data-step="1" aria-label="Agregar una pieza">+</button>
+                  </div>
+                  <span class="est-unidades">piezas</span>
+                </div>
+                <div class="est-resultado">
+                  <div>
+                    <div class="est-desglose" id="pq-desglose">12 × $14.00</div>
+                    <span class="est-tier docena" id="pq-tier">Precio por docena</span>
+                  </div>
+                  <div class="est-total" id="pq-total">$168.00</div>
+                </div>
+              </div>
+              <a class="btn-cot" id="pq-wa" href="https://wa.me/50360158047" target="_blank" rel="noopener">
+                📱 Pedir esta cotización
+              </a>
+              <p class="precio-nota">Incluye confección + bordado. Tallas a confirmar al hacer el pedido.</p>
             </div>
-            <p class="precio-nota">Precio incluye confección + bordado. Tallas a confirmar al hacer el pedido.</p>
-          </div>
-          <div class="cta-zona">
-            <a class="btn-cot" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20me%20interesa%20cotizar%20camisas%20piqué%20con%20bordado.%20¿Podrían%20darme%20más%20información?" target="_blank" rel="noopener">
-              📱 Pedir cotización
-            </a>
           </div>
         </div>
 
         <!-- ── Filipina ── -->
-        <div class="cat-card">
-          <div class="foto">👔</div>
+        <div class="cat-card reveal reveal-d1" data-cat="confeccion">
+          <div class="foto">
+            <span class="precio-badge cotizar">Cotización</span>
+            <img src="fotos/catalogo/filipina-chef.png" alt="Filipina de chef blanca con bordado" />
+          </div>
           <div class="cuerpo">
             <div class="categoria">Confección</div>
             <h3>Filipina / Camisa institucional</h3>
             <div class="badge-disponible">Disponible</div>
             <p class="desc">
-              Camisa de manga corta o larga para uniforme escolar o institucional. Tela dacrón con o sin lycra. Disponible en varios colores, con opción de bordado adicional.
+              Filipina de chef o camisa institucional, manga corta o larga. Tela dacrón con o sin lycra. Varios colores, con opción de bordado de logo.
             </p>
             <div class="detalles">
               <span class="chip">Dacrón</span>
-              <span class="chip">Dacrón con lycra</span>
+              <span class="chip">Cuello mao</span>
               <span class="chip">Manga corta o larga</span>
               <span class="chip">Bordado opcional</span>
             </div>
@@ -248,7 +274,7 @@
           <div class="precios-bloque">
             <div class="precio-row">
               <span class="precio-label">Precio</span>
-              <span class="precio-val consultar">Consultar según cantidad y tela</span>
+              <span class="precio-val consultar">Según cantidad y tela</span>
             </div>
             <p class="precio-nota">El precio varía según tela, cantidad y si lleva bordado. Mandanos los detalles por WhatsApp.</p>
           </div>
@@ -260,8 +286,11 @@
         </div>
 
         <!-- ── Uniforme escolar ── -->
-        <div class="cat-card">
-          <div class="foto">🎓</div>
+        <div class="cat-card reveal reveal-d2" data-cat="uniformes">
+          <div class="foto">
+            <span class="precio-badge cotizar">Cotización</span>
+            🎓
+          </div>
           <div class="cuerpo">
             <div class="categoria">Uniformes</div>
             <h3>Uniforme escolar completo</h3>
@@ -279,7 +308,7 @@
           <div class="precios-bloque">
             <div class="precio-row">
               <span class="precio-label">Precio</span>
-              <span class="precio-val consultar">Consultar según diseño y cantidad</span>
+              <span class="precio-val consultar">Según diseño y cantidad</span>
             </div>
             <p class="precio-nota">Ofrecemos precios preferenciales para colegios e instituciones. Atendemos licitaciones COMPRASAL.</p>
           </div>
@@ -291,8 +320,11 @@
         </div>
 
         <!-- ── Bordado suelto ── -->
-        <div class="cat-card">
-          <div class="foto">🪡</div>
+        <div class="cat-card reveal reveal-d3" data-cat="bordado">
+          <div class="foto">
+            <span class="precio-badge cotizar">Cotización</span>
+            🪡
+          </div>
           <div class="cuerpo">
             <div class="categoria">Servicio de bordado</div>
             <h3>Bordado sobre prenda propia</h3>
@@ -323,6 +355,10 @@
         </div>
 
       </div><!-- /.cat-grid -->
+
+      <p class="precio-nota" style="text-align:center;margin-top:22px;" id="cat-vacio" hidden>
+        No hay productos en esa categoría. <a href="https://wa.me/50360158047" style="color:var(--gold);font-weight:700;">Consultanos por WhatsApp →</a>
+      </p>
     </div>
   </section>
 
@@ -367,6 +403,70 @@
     <span aria-hidden="true">📱</span>
   </a>
 
-  <script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('anio').textContent = new Date().getFullYear();
+
+    /* ── Filtros por categoría ── */
+    (function () {
+      var filtros = document.querySelectorAll('.cat-filtro');
+      var cards = document.querySelectorAll('.cat-card[data-cat]');
+      var vacio = document.getElementById('cat-vacio');
+      filtros.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filtros.forEach(function (b) { b.classList.remove('activo'); });
+          btn.classList.add('activo');
+          var f = btn.getAttribute('data-filter');
+          var visibles = 0;
+          cards.forEach(function (c) {
+            var match = f === 'todo' || c.getAttribute('data-cat') === f;
+            c.classList.toggle('oculto', !match);
+            if (match) visibles++;
+          });
+          if (vacio) vacio.hidden = visibles > 0;
+        });
+      });
+    })();
+
+    /* ── Estimador camisa piqué ── */
+    (function () {
+      var input = document.getElementById('pq-cant');
+      if (!input) return;
+      var desglose = document.getElementById('pq-desglose');
+      var total = document.getElementById('pq-total');
+      var tier = document.getElementById('pq-tier');
+      var wa = document.getElementById('pq-wa');
+      var WA_BASE = 'https://wa.me/50360158047?text=';
+
+      function money(n) { return '$' + n.toFixed(2); }
+      function update() {
+        var q = parseInt(input.value, 10);
+        if (isNaN(q) || q < 1) q = 1;
+        var precio = q >= 12 ? 14 : 16;
+        var t = q * precio;
+        desglose.textContent = q + ' × ' + money(precio);
+        total.textContent = money(t);
+        if (q >= 12) {
+          tier.textContent = 'Precio por docena';
+          tier.className = 'est-tier docena';
+        } else {
+          tier.textContent = 'Precio suelto (menos de 12)';
+          tier.className = 'est-tier suelto';
+        }
+        var msg = 'Hola IMELTEX, quiero cotizar ' + q +
+          ' camisas piqué con bordado (' + money(precio) + '/u = ' + money(t) + ' total). ¿Me confirman?';
+        wa.href = WA_BASE + encodeURIComponent(msg);
+      }
+      input.addEventListener('input', update);
+      document.querySelectorAll('.est-stepper button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var step = parseInt(b.getAttribute('data-step'), 10);
+          var q = parseInt(input.value, 10) || 0;
+          input.value = Math.max(1, q + step);
+          update();
+        });
+      });
+      update();
+    })();
+  </script>
 </body>
 </html>

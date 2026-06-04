@@ -30,6 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
 
   <!-- Schema.org LocalBusiness para SEO local -->
   <script type="application/ld+json">
@@ -121,13 +122,13 @@
   <!-- ── Servicios ── -->
   <section id="servicios">
     <div class="container">
-      <div class="seccion-titulo">
+      <div class="seccion-titulo reveal">
         <div class="label">Qué hacemos</div>
         <h2>Nuestros servicios</h2>
         <div class="sub">Lo que producimos en el taller, todo bajo el mismo techo.</div>
       </div>
       <div class="servicios-grid">
-        <div class="servicio">
+        <div class="servicio reveal">
           <div class="icon" aria-hidden="true">✂️</div>
           <h3>Confección</h3>
           <p>Prendas a medida y por lote, con corte y costura industrial.</p>
@@ -138,7 +139,7 @@
             <li>Banderas y mantones ceremoniales</li>
           </ul>
         </div>
-        <a class="servicio servicio-link" href="bordados.html">
+        <a class="servicio servicio-link reveal reveal-d1" href="bordados.html">
           <div class="icon" aria-hidden="true">🪡</div>
           <h3>Bordado computarizado</h3>
           <p>Logos, escudos y diseños personalizados con máquina multi-aguja.</p>
@@ -150,7 +151,7 @@
           </ul>
           <div class="ver-mas">Ver más →</div>
         </a>
-        <a class="servicio servicio-link" href="cuellos.html">
+        <a class="servicio servicio-link reveal reveal-d2" href="cuellos.html">
           <div class="icon" aria-hidden="true">🧶</div>
           <h3>Cuellos y tejido</h3>
           <p>Cuellos, puños y vivos tejidos para uniformes.</p>
@@ -162,7 +163,7 @@
           </ul>
           <div class="ver-mas">Ver más →</div>
         </a>
-        <div class="servicio">
+        <div class="servicio reveal reveal-d3">
           <div class="icon" aria-hidden="true">🏛️</div>
           <h3>Licitaciones formales</h3>
           <p>Atendemos COMPRASAL y procesos de gobierno con la documentación correcta.</p>
@@ -180,26 +181,26 @@
   <!-- ── Trayectoria (dark section) ── -->
   <section class="dark">
     <div class="container">
-      <div class="seccion-titulo">
+      <div class="seccion-titulo reveal">
         <div class="label">Por qué IMELTEX</div>
         <h2>Trayectoria que respalda</h2>
         <div class="sub">Más de una década perfeccionando cada puntada.</div>
       </div>
       <div class="stats-row">
-        <div class="stat">
-          <div class="num">+10</div>
+        <div class="stat reveal">
+          <div class="num" data-count="10" data-prefix="+">+10</div>
           <div class="label">Años en Sonsonate</div>
         </div>
-        <div class="stat">
-          <div class="num">+50</div>
+        <div class="stat reveal reveal-d1">
+          <div class="num" data-count="50" data-prefix="+">+50</div>
           <div class="label">Instituciones atendidas</div>
         </div>
-        <div class="stat">
-          <div class="num">4</div>
+        <div class="stat reveal reveal-d2">
+          <div class="num" data-count="4">4</div>
           <div class="label">Líneas de producción</div>
         </div>
-        <div class="stat">
-          <div class="num">100%</div>
+        <div class="stat reveal reveal-d3">
+          <div class="num" data-count="100" data-suffix="%">100%</div>
           <div class="label">Hecho en El Salvador</div>
         </div>
       </div>
@@ -209,12 +210,12 @@
   <!-- ── Galería ── -->
   <section id="galeria" class="cream-dark">
     <div class="container">
-      <div class="seccion-titulo">
+      <div class="seccion-titulo reveal">
         <div class="label">Portafolio</div>
         <h2>Trabajos realizados</h2>
         <div class="sub">Una muestra de lo que sale del taller.</div>
       </div>
-      <div class="galeria-grid">
+      <div class="galeria-grid reveal">
         <!-- Cuando tengas fotos, reemplazá los placeholders por <img src="fotos/X.jpg" alt="..." class="galeria-item"> -->
         <div class="galeria-item" aria-hidden="true">🎓</div>
         <div class="galeria-item" aria-hidden="true">👕</div>
@@ -232,12 +233,12 @@
   <!-- ── Ubicación ── -->
   <section id="ubicacion">
     <div class="container">
-      <div class="seccion-titulo">
+      <div class="seccion-titulo reveal">
         <div class="label">Dónde estamos</div>
         <h2>Visitanos en Sonsonate</h2>
         <div class="sub">Lunes a Sábado · 8:00 AM – 5:00 PM</div>
       </div>
-      <div class="mapa-wrap">
+      <div class="mapa-wrap reveal">
         <iframe
           src="https://www.google.com/maps?q=ImelTex+Bazar+y+Confecci%C3%B3n+Sonsonate&output=embed"
           loading="lazy"
@@ -256,12 +257,12 @@
   <!-- ── Contacto ── -->
   <section id="contacto" class="cream-dark">
     <div class="container">
-      <div class="seccion-titulo">
+      <div class="seccion-titulo reveal">
         <div class="label">Cotizá</div>
         <h2>Hablemos de tu pedido</h2>
         <div class="sub">Mandanos referencia, cantidad y fecha. Respondemos rápido por WhatsApp.</div>
       </div>
-      <div class="contacto-grid">
+      <div class="contacto-grid reveal">
         <div>
           <div style="background: var(--navy); color: #fff; padding: 36px 28px; border-radius: 4px; text-align: center;">
             <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin-bottom: 8px;">¿Lo más rápido?</div>
