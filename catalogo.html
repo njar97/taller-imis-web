@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es-SV">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Catálogo de precios — IMELTEX Sonsonate, El Salvador</title>
+  <meta name="description" content="Precios de uniformes, camisas piqué, filipinas y más. Confección con bordado en Sonsonate. Pedidos por docena y unitarios." />
+  <meta name="theme-color" content="#1B2845" />
+  <meta property="og:title" content="Catálogo IMELTEX — Precios y productos" />
+  <meta property="og:description" content="Camisas piqué con bordado, filipinas y uniformes. Precios por docena y unitario." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:url" content="https://njar97.github.io/taller-imis-web/catalogo.html" />
+  <link rel="canonical" href="https://njar97.github.io/taller-imis-web/catalogo.html" />
+  <link rel="icon" href="imeltex-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Catálogo ── */
+    .catalogo-hero {
+      background:
+        radial-gradient(circle at 20% 30%, rgba(194,167,94,0.12) 0%, transparent 50%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+      padding: 60px 0 70px;
+      border-bottom: 1px solid var(--linea);
+      text-align: center;
+    }
+    .catalogo-hero .label-tag {
+      display: inline-block; font-size: 11px; letter-spacing: 4px;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 16px;
+      padding: 5px 16px; border: 1px solid var(--gold); border-radius: 100px;
+    }
+    .catalogo-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 12px; }
+    .catalogo-hero p { color: var(--gris); max-width: 520px; margin: 0 auto; font-size: 15px; }
+
+    /* ── Grid ── */
+    .cat-section { padding: 64px 0; }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    /* ── Card ── */
+    .cat-card {
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid var(--linea);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .22s, transform .22s;
+    }
+    .cat-card:hover {
+      box-shadow: 0 8px 28px rgba(27,40,69,.11);
+      transform: translateY(-3px);
+    }
+    .cat-card .foto {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 72px;
+    }
+    .cat-card .foto img { width: 100%; height: 100%; object-fit: cover; }
+    .cat-card .cuerpo { padding: 22px 22px 0; flex: 1; }
+    .cat-card .categoria {
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+    }
+    .cat-card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 8px; }
+    .cat-card .desc { font-size: 13.5px; color: var(--gris); line-height: 1.55; margin-bottom: 16px; }
+    .cat-card .detalles { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .cat-card .chip {
+      font-size: 11px; padding: 3px 10px; border-radius: 100px;
+      background: var(--cream); color: var(--navy); font-weight: 600;
+      border: 1px solid var(--linea);
+    }
+
+    /* Precios */
+    .precios-bloque {
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin-bottom: 0;
+      border-top: 1px solid var(--linea);
+    }
+    .precio-row {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 8px; padding: 5px 0;
+    }
+    .precio-row + .precio-row { border-top: 1px solid var(--linea); }
+    .precio-label { font-size: 12px; color: var(--gris); font-weight: 500; }
+    .precio-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 900; color: var(--navy);
+    }
+    .precio-val .unit { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: var(--gris); margin-left: 3px; }
+    .precio-val.consultar {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px; font-weight: 700;
+      color: var(--gold); background: none;
+    }
+    .precio-nota {
+      font-size: 11px; color: var(--gris-claro);
+      margin-top: 8px; line-height: 1.4;
+    }
+
+    /* CTA */
+    .cat-card .cta-zona { padding: 16px 22px 22px; }
+    .btn-cot {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 13px 16px;
+      background: var(--verde-wa); color: #fff;
+      font-weight: 700; font-size: 14px; border-radius: 4px;
+      border: none; cursor: pointer; text-decoration: none;
+      transition: background .18s, transform .15s;
+    }
+    .btn-cot:hover { background: #1ebe5d; transform: translateY(-1px); }
+    .btn-cot-ghost {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 11px 16px; margin-top: 8px;
+      background: transparent; color: var(--navy);
+      font-weight: 600; font-size: 13px; border-radius: 4px;
+      border: 1.5px solid var(--linea); cursor: pointer; text-decoration: none;
+      transition: border-color .18s, color .18s;
+    }
+    .btn-cot-ghost:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* Badge disponibilidad */
+    .badge-disponible {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 700; color: #1ebe5d;
+      background: #f0fff5; border: 1px solid #9be9b8;
+      padding: 3px 10px; border-radius: 100px; margin-bottom: 14px;
+    }
+    .badge-disponible::before { content: "●"; font-size: 7px; }
+
+    /* Nota de descuento docena */
+    .descuento-aviso {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin-bottom: 36px;
+      display: flex; align-items: center; gap: 14px;
+      font-size: 14px;
+    }
+    .descuento-aviso strong { color: var(--gold-light); }
+    .descuento-aviso .icono { font-size: 28px; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .descuento-aviso { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo-link" aria-label="IMELTEX — inicio">
+        <img src="imeltex-logo.png" alt="IMELTEX" />
+      </a>
+      <ul>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="catalogo.html" style="color:var(--navy);font-weight:800">Catálogo</a></li>
+        <li><a href="bordados.html">Bordados</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <div class="catalogo-hero">
+    <div class="container">
+      <div class="label-tag">Catálogo 2026</div>
+      <h1>Productos y precios</h1>
+      <p>Prendas confeccionadas en el taller con bordado incluido. Precios por docena y por unidad suelta.</p>
+    </div>
+  </div>
+
+  <!-- ── Productos ── -->
+  <section class="cat-section">
+    <div class="container">
+
+      <div class="descuento-aviso">
+        <div class="icono">🏷️</div>
+        <div>
+          El precio por <strong>docena</strong> es el mejor precio. Pedidos menores de 12 unidades tienen un precio diferente — indicado en cada producto.
+        </div>
+      </div>
+
+      <div class="cat-grid">
+
+        <!-- ── Camisa piqué ── -->
+        <div class="cat-card">
+          <div class="foto">👕</div>
+          <div class="cuerpo">
+            <div class="categoria">Confección + bordado</div>
+            <h3>Camisa piqué con bordado</h3>
+            <div class="badge-disponible">Disponible</div>
+            <p class="desc">
+              Camisa polo de tela piqué con cuello y puños tejidos. Incluye bordado computarizado de logo o diseño en el pecho izquierdo. Ideal para uniformes institucionales y empresariales.
+            </p>
+            <div class="detalles">
+              <span class="chip">Piqué algodón</span>
+              <span class="chip">Cuello tejido</span>
+              <span class="chip">Bordado incluido</span>
+              <span class="chip">Varios colores</span>
+            </div>
+          </div>
+          <div class="precios-bloque">
+            <div class="precio-row">
+              <span class="precio-label">Docena (12 unidades)</span>
+              <span class="precio-val">$14.00<span class="unit">/u · $168 total</span></span>
+            </div>
+            <div class="precio-row">
+              <span class="precio-label">Menos de docena</span>
+              <span class="precio-val">$16.00<span class="unit">/unidad</span></span>
+            </div>
+            <p class="precio-nota">Precio incluye confección + bordado. Tallas a confirmar al hacer el pedido.</p>
+          </div>
+          <div class="cta-zona">
+            <a class="btn-cot" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20me%20interesa%20cotizar%20camisas%20piqué%20con%20bordado.%20¿Podrían%20darme%20más%20información?" target="_blank" rel="noopener">
+              📱 Pedir cotización
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Filipina ── -->
+        <div class="cat-card">
+          <div class="foto">👔</div>
+          <div class="cuerpo">
+            <div class="categoria">Confección</div>
+            <h3>Filipina / Camisa institucional</h3>
+            <div class="badge-disponible">Disponible</div>
+            <p class="desc">
+              Camisa de manga corta o larga para uniforme escolar o institucional. Tela dacrón con o sin lycra. Disponible en varios colores, con opción de bordado adicional.
+            </p>
+            <div class="detalles">
+              <span class="chip">Dacrón</span>
+              <span class="chip">Dacrón con lycra</span>
+              <span class="chip">Manga corta o larga</span>
+              <span class="chip">Bordado opcional</span>
+            </div>
+          </div>
+          <div class="precios-bloque">
+            <div class="precio-row">
+              <span class="precio-label">Precio</span>
+              <span class="precio-val consultar">Consultar según cantidad y tela</span>
+            </div>
+            <p class="precio-nota">El precio varía según tela, cantidad y si lleva bordado. Mandanos los detalles por WhatsApp.</p>
+          </div>
+          <div class="cta-zona">
+            <a class="btn-cot" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20me%20interesa%20cotizar%20filipinas%20o%20camisas%20institucionales." target="_blank" rel="noopener">
+              📱 Consultar precio
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Uniforme escolar ── -->
+        <div class="cat-card">
+          <div class="foto">🎓</div>
+          <div class="cuerpo">
+            <div class="categoria">Uniformes</div>
+            <h3>Uniforme escolar completo</h3>
+            <div class="badge-disponible">Disponible</div>
+            <p class="desc">
+              Conjunto de uniforme escolar: camisa, pantalón o falda. Confeccionado en telas dacrón o gabardina. Bordado del escudo o logo del centro educativo disponible.
+            </p>
+            <div class="detalles">
+              <span class="chip">Dacrón</span>
+              <span class="chip">Gabardina</span>
+              <span class="chip">Escudo bordado</span>
+              <span class="chip">Pedidos por lote</span>
+            </div>
+          </div>
+          <div class="precios-bloque">
+            <div class="precio-row">
+              <span class="precio-label">Precio</span>
+              <span class="precio-val consultar">Consultar según diseño y cantidad</span>
+            </div>
+            <p class="precio-nota">Ofrecemos precios preferenciales para colegios e instituciones. Atendemos licitaciones COMPRASAL.</p>
+          </div>
+          <div class="cta-zona">
+            <a class="btn-cot" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20me%20interesa%20cotizar%20uniformes%20escolares." target="_blank" rel="noopener">
+              📱 Consultar precio
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Bordado suelto ── -->
+        <div class="cat-card">
+          <div class="foto">🪡</div>
+          <div class="cuerpo">
+            <div class="categoria">Servicio de bordado</div>
+            <h3>Bordado sobre prenda propia</h3>
+            <div class="badge-disponible">Disponible</div>
+            <p class="desc">
+              ¿Tenés las prendas y solo necesitás el bordado? Trabajamos sobre camisas, polos, gorras, mochilas y más. Logo, escudo o texto personalizado.
+            </p>
+            <div class="detalles">
+              <span class="chip">Sobre prenda del cliente</span>
+              <span class="chip">Logo o texto</span>
+              <span class="chip">Máquina multi-aguja</span>
+              <span class="chip">Archivos .dst / .pes</span>
+            </div>
+          </div>
+          <div class="precios-bloque">
+            <div class="precio-row">
+              <span class="precio-label">Precio</span>
+              <span class="precio-val consultar">Según diseño y cantidad de puntos</span>
+            </div>
+            <p class="precio-nota">Mandanos el diseño o logo para cotizar. Si no tenés archivo, lo digitalizamos.</p>
+          </div>
+          <div class="cta-zona">
+            <a class="btn-cot" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20quiero%20cotizar%20bordado%20sobre%20mis%20propias%20prendas." target="_blank" rel="noopener">
+              📱 Consultar precio
+            </a>
+            <a class="btn-cot-ghost" href="bordados.html">Ver más sobre bordados →</a>
+          </div>
+        </div>
+
+      </div><!-- /.cat-grid -->
+    </div>
+  </section>
+
+  <!-- ── CTA final ── -->
+  <section class="dark">
+    <div class="container" style="text-align:center; padding: 60px 24px;">
+      <div style="font-family:'Playfair Display',serif; font-size: clamp(1.5rem,3.5vw,2.2rem); font-weight:900; margin-bottom:12px;">
+        ¿No encontraste lo que buscás?
+      </div>
+      <div style="color:#b0b9c8; font-size:14px; max-width:440px; margin: 0 auto 28px;">
+        Mandanos los detalles por WhatsApp — cantidad, tipo de prenda, color y fecha — y te cotizamos en el día.
+      </div>
+      <a class="btn btn-wa" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20quiero%20cotizar%20un%20pedido." target="_blank" rel="noopener">
+        <span style="font-size:18px" aria-hidden="true">📱</span> Cotizar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="marca-fiscal">IMELTEX</div>
+          <div style="color:#b0b9c8; font-size:13px; margin-bottom:6px;">Bazar y Confección</div>
+          <div style="font-size:12px; color:#6b7794;">Sonsonate, El Salvador · Desde 2011</div>
+        </div>
+        <div class="fiscal">
+          <div style="color:#fff; font-weight:700; margin-bottom:6px;">Razón social fiscal</div>
+          <div><strong>UDP Confecciones IMIS</strong></div>
+          <div>NIT 0315-101011-101-2 · NRC 211590-0</div>
+          <div>Fabricación de productos textiles</div>
+        </div>
+      </div>
+      <div class="copy">
+        © <span id="anio"></span> IMELTEX · UDP Confecciones IMIS. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20quiero%20cotizar%20un%20pedido" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
+    <span aria-hidden="true">📱</span>
+  </a>
+
+  <script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
+</body>
+</html>
