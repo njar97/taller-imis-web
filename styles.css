@@ -422,3 +422,37 @@ footer .copy {
 }
 .est-tier.docena { background: #f0fff5; color: #149a4b; border: 1px solid #9be9b8; }
 .est-tier.suelto { background: var(--cream-dark); color: var(--gris); border: 1px solid var(--linea); }
+
+/* ── FAQ (cuellos.html) ── */
+.faq-lista { max-width: 720px; }
+.faq-item {
+  border-bottom: 1px solid var(--linea);
+  padding: 4px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after { content: '−'; }
+.faq-item p {
+  padding: 0 0 16px;
+  color: var(--gris);
+  line-height: 1.65;
+  margin: 0;
+}
