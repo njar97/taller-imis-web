@@ -422,3 +422,16 @@ footer .copy {
 }
 .est-tier.docena { background: #f0fff5; color: #149a4b; border: 1px solid #9be9b8; }
 .est-tier.suelto { background: var(--cream-dark); color: var(--gris); border: 1px solid var(--linea); }
+
+/* ── FAQ ── */
+.faq-lista { display: flex; flex-direction: column; gap: 8px; max-width: 780px; margin: 0 auto; }
+.faq-item { border: 1px solid var(--linea, #e5e7eb); border-radius: 6px; overflow: hidden; }
+.faq-item summary {
+  padding: 16px 20px; font-weight: 600; font-size: 15px; cursor: pointer;
+  list-style: none; display: flex; justify-content: space-between; align-items: center;
+  background: #fff;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; font-size: 20px; color: var(--gold); flex-shrink: 0; margin-left: 12px; }
+.faq-item[open] summary::after { content: '−'; }
+.faq-item p { padding: 0 20px 16px; font-size: 14px; color: var(--gris); line-height: 1.6; }
