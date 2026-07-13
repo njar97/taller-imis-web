@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://njar97.github.io/taller-imis-web/sitemap.xml
+Sitemap: https://imeltex.com.sv/sitemap.xml
