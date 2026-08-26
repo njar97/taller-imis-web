@@ -22,8 +22,10 @@ concurrency:
 jobs:
   sitemap:
     runs-on: ubuntu-latest
-    # Evita el bucle: el commit que hace este mismo workflow no lo vuelve a disparar.
-    if: "!contains(github.event.head_commit.message, '[skip-seo]')"
+    # Evita el bucle: si el commit lo hizo este mismo workflow, no se repite.
+    # (Se mira QUIEN commiteó, no el texto del mensaje: si se busca la etiqueta
+    #  dentro del mensaje, un commit que solo la MENCIONA se salta por error.)
+    if: github.actor != 'github-actions[bot]'
     steps:
       - uses: actions/checkout@v4
         with:
