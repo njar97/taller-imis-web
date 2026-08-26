@@ -1,0 +1,49 @@
+name: SEO — sitemap al día y aviso a buscadores
+
+# Corre en cada push que toque una página. Deja el sitemap con las fechas
+# reales de cada archivo y le avisa a IndexNow (Bing y Yandex) qué cambió.
+# Google no tiene ping: se entera al releer el sitemap.
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "**.html"
+      - "tools/actualizar_sitemap.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-sitemap
+  cancel-in-progress: false
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    # Evita el bucle: el commit que hace este mismo workflow no lo vuelve a disparar.
+    if: "!contains(github.event.head_commit.message, '[skip-seo]')"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # hace falta HEAD~1 para saber qué cambió
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Actualizar sitemap y avisar a IndexNow
+        run: python tools/actualizar_sitemap.py
+
+      - name: Commitear el sitemap si cambió
+        run: |
+          if [[ -n "$(git status --porcelain sitemap.xml)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add sitemap.xml
+            git commit -m "sitemap: fechas al día [skip-seo]"
+            git push
+          else
+            echo "El sitemap no cambió, no hay nada que commitear."
+          fi
