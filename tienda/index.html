@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es-SV">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Tienda en línea — IMELTEX Sonsonate, El Salvador</title>
+  <meta name="description" content="Compre en línea guantes blancos de tela y banderas de El Salvador. Envío a todo el país, pago contra entrega o transferencia. IMELTEX, Sonsonate." />
+  <meta name="theme-color" content="#1B2845" />
+  <meta property="og:title" content="Tienda IMELTEX — Guantes y banderas" />
+  <meta property="og:description" content="Guantes blancos de tela desde $1.10 el par y banderas de El Salvador. Envío a todo el país." />
+  <meta property="og:image" content="https://imeltex.com.sv/og-image.png" />
+  <meta property="og:url" content="https://imeltex.com.sv/tienda/" />
+  <link rel="canonical" href="https://imeltex.com.sv/tienda/" />
+  <link rel="icon" href="../imeltex-icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=20260906" />
+  <link rel="stylesheet" href="tienda.css?v=20260906c" />
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo-link" aria-label="IMELTEX — inicio">
+        <img src="../imeltex-logo.png" alt="IMELTEX" />
+      </a>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../banderas.html">Banderas</a></li>
+        <li><a href="../catalogo.html">Catálogo</a></li>
+        <li><a href="index.html" class="activo">Tienda</a></li>
+      </ul>
+      <button class="btn-carrito" id="btnCarrito" aria-label="Ver carrito">
+        <span aria-hidden="true">🛒</span>
+        <span class="badge" id="badgeCarrito" hidden>0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ VISTA: catálogo ══ -->
+  <section id="vista-catalogo" class="vista">
+    <div class="tienda-hero">
+      <div class="container">
+        <span class="label-tag">Tienda en línea</span>
+        <h1>Compre directo del taller</h1>
+        <p>Guantes y banderas listos para pedir. Envío a todo El Salvador o retiro en Sonsonate, con factura.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="grid-productos" id="gridProductos"></div>
+
+      <div class="confianza">
+        <div class="conf-item">
+          <div class="conf-ico" aria-hidden="true">🚚</div>
+          <div>
+            <strong>Envío a todo el país</strong>
+            <span>Por Express El Salvador, 24 a 48 horas. O retire gratis en Sonsonate.</span>
+          </div>
+        </div>
+        <div class="conf-item">
+          <div class="conf-ico" aria-hidden="true">💵</div>
+          <div>
+            <strong>Pague al recibir</strong>
+            <span>Efectivo contra entrega o transferencia. No necesita tarjeta.</span>
+          </div>
+        </div>
+        <div class="conf-item">
+          <div class="conf-ico" aria-hidden="true">🧾</div>
+          <div>
+            <strong>Con factura</strong>
+            <span>Consumidor final o crédito fiscal, con su NIT y NRC.</span>
+          </div>
+        </div>
+        <div class="conf-item">
+          <div class="conf-ico" aria-hidden="true">🏭</div>
+          <div>
+            <strong>Taller propio desde 2011</strong>
+            <span>Confección y bordado en Sonsonate. Atendemos por WhatsApp.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VISTA: producto ══ -->
+  <section id="vista-producto" class="vista" hidden>
+    <div class="container">
+      <button class="volver" data-ir="catalogo">← Volver a la tienda</button>
+      <div class="producto" id="detalleProducto"></div>
+    </div>
+  </section>
+
+  <!-- ══ VISTA: checkout ══ -->
+  <section id="vista-checkout" class="vista" hidden>
+    <div class="container container-angosto">
+      <button class="volver" data-ir="catalogo">← Seguir comprando</button>
+      <h1 class="titulo-vista">Finalizar pedido</h1>
+      <form id="formCheckout" novalidate>
+
+        <div class="paso">
+          <h2><span class="num">1</span> Su pedido</h2>
+          <div id="resumenCheckout" class="resumen"></div>
+        </div>
+
+        <div class="paso">
+          <h2><span class="num">2</span> ¿Cómo lo recibe?</h2>
+          <div id="opcionesEnvio" class="opciones"></div>
+          <div id="camposDireccion" hidden>
+            <label class="campo">
+              <span>Departamento y municipio <b>*</b></span>
+              <input type="text" name="municipio" placeholder="Ej. Sonsonate, Sonsonate" autocomplete="address-level2" />
+            </label>
+            <label class="campo">
+              <span>Dirección exacta <b>*</b></span>
+              <textarea name="direccion" rows="2" placeholder="Colonia, calle, número de casa y punto de referencia" autocomplete="street-address"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="paso">
+          <h2><span class="num">3</span> Sus datos</h2>
+          <label class="campo">
+            <span>Nombre completo <b>*</b></span>
+            <input type="text" name="nombre" autocomplete="name" />
+          </label>
+          <label class="campo">
+            <span>Teléfono de WhatsApp <b>*</b></span>
+            <input type="tel" name="telefono" inputmode="tel" placeholder="7777-7777" autocomplete="tel" />
+          </label>
+          <label class="campo">
+            <span>Correo electrónico</span>
+            <input type="email" name="correo" placeholder="Para enviarle la factura" autocomplete="email" />
+          </label>
+        </div>
+
+        <div class="paso">
+          <h2><span class="num">4</span> Factura</h2>
+          <div class="opciones opciones-fila">
+            <label class="opcion">
+              <input type="radio" name="documento" value="Consumidor final" checked />
+              <div><strong>Consumidor final</strong><span>Para compras personales.</span></div>
+            </label>
+            <label class="opcion">
+              <input type="radio" name="documento" value="Crédito fiscal" />
+              <div><strong>Crédito fiscal</strong><span>Para empresas con NRC.</span></div>
+            </label>
+          </div>
+          <div id="camposFiscales" hidden>
+            <label class="campo">
+              <span>Razón social <b>*</b></span>
+              <input type="text" name="razonSocial" />
+            </label>
+            <div class="campo-doble">
+              <label class="campo">
+                <span>NIT <b>*</b></span>
+                <input type="text" name="nit" inputmode="numeric" placeholder="0000-000000-000-0" />
+              </label>
+              <label class="campo">
+                <span>NRC <b>*</b></span>
+                <input type="text" name="nrc" inputmode="numeric" placeholder="000000-0" />
+              </label>
+            </div>
+            <label class="campo">
+              <span>Dirección fiscal <b>*</b></span>
+              <input type="text" name="dirFiscal" />
+            </label>
+            <label class="campo">
+              <span>Giro o actividad</span>
+              <input type="text" name="giro" placeholder="Ej. venta de artículos de papelería" />
+            </label>
+          </div>
+        </div>
+
+        <div class="paso">
+          <h2><span class="num">5</span> ¿Cómo paga?</h2>
+          <div id="opcionesPago" class="opciones"></div>
+        </div>
+
+        <div class="paso">
+          <h2><span class="num">6</span> Total</h2>
+          <div id="totalCheckout" class="total-box"></div>
+          <label class="campo">
+            <span>Nota para el taller (opcional)</span>
+            <textarea name="notas" rows="2" placeholder="Fecha en que lo necesita, indicaciones de entrega…"></textarea>
+          </label>
+          <p class="errores" id="erroresCheckout" hidden></p>
+          <button type="submit" class="btn-principal" id="btnEnviarPedido">Enviar pedido</button>
+          <p class="letra-chica">
+            Al enviar, el pedido entra al taller y le escribimos por WhatsApp para confirmarlo.
+            Todavía no se le cobra nada.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ VISTA: confirmación ══ -->
+  <section id="vista-listo" class="vista" hidden>
+    <div class="container container-angosto">
+      <div class="confirmacion" id="confirmacion"></div>
+    </div>
+  </section>
+
+  <!-- ══ Carrito (panel lateral) ══ -->
+  <div class="carrito-fondo" id="carritoFondo" hidden></div>
+  <aside class="carrito" id="carrito" hidden aria-label="Carrito de compras">
+    <div class="carrito-top">
+      <h2>Su pedido</h2>
+      <button class="cerrar" id="cerrarCarrito" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="carrito-items" id="carritoItems"></div>
+    <div class="carrito-pie" id="carritoPie"></div>
+  </aside>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="marca-fiscal">IMELTEX</div>
+          <div style="color: #b0b9c8; font-size: 13px; margin-bottom: 6px;">Bazar y Confección</div>
+          <div style="font-size: 12px; color: #6b7794;">Sonsonate, El Salvador · Desde 2011</div>
+        </div>
+        <div class="fiscal">
+          <div style="color: #fff; font-weight: 700; margin-bottom: 6px;">Razón social fiscal</div>
+          <div><strong>UDP Confecciones IMIS</strong></div>
+          <div>NIT 0315-101011-101-2 · NRC 211590-0</div>
+          <div>Fabricación de productos textiles</div>
+        </div>
+      </div>
+      <div class="copy">
+        © <span id="anio"></span> IMELTEX · UDP Confecciones IMIS. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/50360158047?text=Hola%20IMELTEX%2C%20tengo%20una%20consulta%20de%20la%20tienda" target="_blank" rel="noopener" title="Escríbanos por WhatsApp" aria-label="WhatsApp">
+    <span aria-hidden="true">📱</span>
+  </a>
+
+  <script type="module" src="tienda.js?v=20260906c"></script>
+  <script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
+</body>
+</html>

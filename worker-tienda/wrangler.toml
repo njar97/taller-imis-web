@@ -1,0 +1,8 @@
+name = "tienda-imeltex"
+main = "src/index.js"
+compatibility_date = "2026-09-06"
+
+# El secreto SUPABASE_KEY se carga aparte (no va en git):
+#   npx wrangler secret put SUPABASE_KEY --config worker-tienda/wrangler.toml
+# Es la publishable key del proyecto taller-imis-produccion, la misma que usa
+# la app de pedidos.
