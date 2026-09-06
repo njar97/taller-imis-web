@@ -12,7 +12,7 @@ export const PRODUCTOS = [
     id: "guantes-blancos",
     nombre: "Guantes blancos de tela",
     resumen: "Par de guantes blancos con broche de presión. Talla única de adulto.",
-    fotos: ["img/guantes-par.jpg?v=2", "img/guantes-medidas.jpg"],
+    fotos: ["img/guantes-par.jpg", "img/guantes-medidas.jpg"],
     unidad: "par",
     unidadPlural: "pares",
     // Escalones por cantidad: desde `min` pares, cada par vale `precio`.
