@@ -6,7 +6,7 @@
 // lo escribe en la misma base que usa la app del taller. Si el Worker no
 // contesta, el pedido NO se pierde: se ofrece mandarlo por WhatsApp.
 
-import { PRODUCTOS, ENVIOS, PAGOS, COD_PCT } from "./productos.js";
+import { PRODUCTOS, ENVIOS, PAGOS, COD_PCT } from "./productos.js?v=20260906c";
 
 const API = "https://tienda-imeltex.prensaplumalibre.workers.dev/pedido";
 const WA_TALLER = "50360158047";
